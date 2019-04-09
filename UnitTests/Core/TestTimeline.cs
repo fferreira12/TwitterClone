@@ -47,8 +47,8 @@ namespace Tests.Core
             List<Tweet> tweets = timeline.GetLatestNTweets(2);
 
             //Since it is a stack, the last added tweet should be the first in the list.
-            Assert.AreEqual("f@gmail.com", tweets[0].UserName);
-            Assert.AreEqual("c@gmail.com", tweets[1].UserName);
+            Assert.AreEqual("dale", tweets[0].User.FirstName);
+            Assert.AreEqual("ash", tweets[1].User.FirstName);
         }
 
         [Test]

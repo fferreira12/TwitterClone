@@ -22,7 +22,7 @@ namespace Tests.Core
             User user = new User("a", "b", "c");
             user.MakeTweet("First");
 
-            Assert.AreEqual("First", user.Tweets[0].Content);
+            Assert.AreEqual("First", user.Tweets.Peek().Content);
         }
     }
 }

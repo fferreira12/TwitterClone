@@ -18,12 +18,14 @@ namespace TwitterClonePersistence
 
         public void SaveUser(User user)
         {
-            List<User> users = new List<User>
+            UserDTO udto = new UserDTO();
+            udto.SetUser(user);
+            List<UserDTO> users = new List<UserDTO>
             {
-                user
+                udto
             };
 
-            XmlSerializer serializer = new XmlSerializer(typeof(List<User>));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<UserDTO>));
             TextWriter writer = new StreamWriter(USERS_FILENAME);
             serializer.Serialize(writer, users);
             writer.Close();
@@ -31,12 +33,12 @@ namespace TwitterClonePersistence
 
         public ICollection<User> GetUsers()
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(ICollection<User>));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<UserDTO>));
             FileStream fs = new FileStream(USERS_FILENAME, FileMode.Open);
 
-            ICollection<User> users;
-            users = (ICollection<User>)serializer.Deserialize(fs);
-            return users;
+            List<UserDTO> users;
+            users = (List<UserDTO>)serializer.Deserialize(fs);
+            return users.Select(udto => udto.GetUser()).ToList();
         }
 
         public void SaveTweet(Tweet tweet)
