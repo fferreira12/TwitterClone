@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using TwitterClone;
 
-namespace Tests
+namespace Tests.Core
 {
     class TestUser
     {
@@ -22,7 +22,7 @@ namespace Tests
             User user = new User("a", "b", "c");
             user.MakeTweet("First");
 
-            Assert.AreEqual("First", user.Tweets[0].Content);
+            Assert.AreEqual("First", user.Tweets.Peek().Content);
         }
     }
 }

@@ -13,20 +13,20 @@ namespace TwitterClone
         public string LastName { get; set; }
         public string Username { get; set; }
 
-        public List<Tweet> Tweets;
+        public Stack<Tweet> Tweets;
 
         public User(string firstName, string lastName, string username)
         {
             FirstName = firstName;
             LastName = lastName;
             Username = username;
-            Tweets = new List<Tweet>();
+            Tweets = new Stack<Tweet>();
         }
 
         public Tweet MakeTweet(string content)
         {
             Tweet t = new Tweet(this, content);
-            Tweets.Add(t);
+            Tweets.Push(t);
             return t;
         }
     }

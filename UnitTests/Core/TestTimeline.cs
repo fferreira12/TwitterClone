@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using TwitterClone;
 
-namespace Tests
+namespace Tests.Core
 {
     public class TestTimeline
     {
