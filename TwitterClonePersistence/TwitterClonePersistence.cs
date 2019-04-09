@@ -13,7 +13,7 @@ namespace TwitterClonePersistence
     public class TwitterCloneDiskPersistence
     {
 
-        public const string USERS_FILENAME = "users.xml";
+        public const string USERS_FILENAME = @"C:\Users\fferr\source\repos\TwitterClone\Data\users.xml";
         public const string TWEETS_FILENAME = "tweets.xml";
 
         public void SaveUser(User user)

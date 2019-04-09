@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+
+    <ul>
+        @foreach (var user in Model.Users)
+        {
+            <li>@user.FirstName</li>
+        }
+    </ul>
+
+</body>
+</html>
