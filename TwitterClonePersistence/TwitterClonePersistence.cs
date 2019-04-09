@@ -38,6 +38,7 @@ namespace TwitterClonePersistence
 
             List<UserDTO> users;
             users = (List<UserDTO>)serializer.Deserialize(fs);
+            fs.Close();
             return users.Select(udto => udto.GetUser()).ToList();
         }
 
