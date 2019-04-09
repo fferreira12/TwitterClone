@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using TwitterClone;
 
-namespace Tests
+namespace Tests.Core
 {
     public class TestTimeline
     {
@@ -47,8 +47,8 @@ namespace Tests
             List<Tweet> tweets = timeline.GetLatestNTweets(2);
 
             //Since it is a stack, the last added tweet should be the first in the list.
-            Assert.AreEqual("dale", tweets[0].User.FirstName);
-            Assert.AreEqual("ash", tweets[1].User.FirstName);
+            Assert.AreEqual("f@gmail.com", tweets[0].UserName);
+            Assert.AreEqual("c@gmail.com", tweets[1].UserName);
         }
 
         [Test]

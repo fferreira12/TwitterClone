@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using TwitterClone;
 
-namespace Tests
+namespace Tests.Core
 {
     class TestUser
     {

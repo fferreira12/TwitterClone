@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System;
 using TwitterClone;
 
-namespace Tests
+namespace Tests.Core
 {
     public class TestTweet
     {
